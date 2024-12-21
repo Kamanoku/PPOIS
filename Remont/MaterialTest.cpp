@@ -8,7 +8,7 @@
 #include <gtest/gtest.h>
 #include <sstream>
 
-// Тест конструктора
+
 TEST(MaterialTest, ConstructorTest) {
     Department dept(1, "Mechanics");
     Employee employee(1, "John Doe", 35, 50000.0, dept);
@@ -23,7 +23,7 @@ TEST(MaterialTest, ConstructorTest) {
     EXPECT_EQ(material.getRepairOrder().getId(), 201);
 }
 
-// Тест геттеров
+
 TEST(MaterialTest, GettersTest) {
     Department dept(2, "Electronics");
     Employee employee(2, "Jane Smith", 30, 45000.0, dept);
@@ -38,7 +38,7 @@ TEST(MaterialTest, GettersTest) {
     EXPECT_EQ(material.getRepairOrder().getId(), 202);
 }
 
-// Тест сеттеров
+
 TEST(MaterialTest, SettersTest) {
     Department dept(3, "Welding");
     Employee employee(3, "Mark Technician", 40, 55000.0, dept);
@@ -46,7 +46,7 @@ TEST(MaterialTest, SettersTest) {
     RepairOrder repairOrder(203, "Engine repair", 300.0, client, employee);
     Material material(303, "Engine oil", 30.0, 5, repairOrder);
 
-    // Обновление данных
+ 
     material.setName("Premium Engine Oil");
     material.setCost(40.0);
     material.setQuantity(6);
@@ -64,7 +64,7 @@ TEST(MaterialTest, SettersTest) {
     EXPECT_EQ(material.getRepairOrder().getId(), 204);
 }
 
-// Тест метода printDetails
+
 TEST(MaterialTest, PrintDetailsTest) {
     Department dept(5, "Bodywork");
     Employee employee(5, "Tom Bodyworker", 28, 46000.0, dept);
