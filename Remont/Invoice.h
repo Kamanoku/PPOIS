@@ -8,8 +8,8 @@ private:
     int id;
     double totalAmount;
     std::string issueDate;
-    Client client;         // Ассоциация: счёт связан с клиентом
-    RepairOrder repairOrder; // Ассоциация: счёт связан с заказом
+    Client client;        
+    RepairOrder repairOrder; 
 
 public:
     Invoice(int id, double totalAmount, const std::string& issueDate, const Client& client, const RepairOrder& repairOrder);
