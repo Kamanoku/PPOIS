@@ -17,4 +17,4 @@ private:
     std::string contactInfo;
 };
 
-#endif // SUPPLIER_H
+#endif 
