@@ -191,7 +191,7 @@ TEST(MatrixTest, PodMatrix) {
     matrix.getValue()[7] = 3.2;
     matrix.getValue()[8] = 3.3;
 
-    Matrix podMatrix = matrix.PodMatrix(); // Предполагается, что пользователь вводит 2 и 2
+    Matrix podMatrix = matrix.PodMatrix(); 
 
     EXPECT_EQ(podMatrix.getRow(), 2);
     EXPECT_EQ(podMatrix.getColumn(), 2);
