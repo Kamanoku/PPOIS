@@ -7,7 +7,7 @@ private:
     int id;
     std::string content;
     int rating;
-    Client client; // Ассоциация: отзыв связан с клиентом
+    Client client; 
 
 public:
     Feedback(int id, const std::string& content, int rating, const Client& client);
