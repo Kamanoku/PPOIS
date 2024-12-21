@@ -19,4 +19,4 @@ private:
     std::string terms;
 };
 
-#endif // WARRANTY_H
+#endif 
