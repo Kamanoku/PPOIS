@@ -8,7 +8,7 @@ private:
     std::string name;
     double cost;
     int quantity;
-    RepairOrder repairOrder; // Ассоциация: материалы связаны с заказом на ремонт
+    RepairOrder repairOrder; 
 
 public:
     Material(int id, const std::string& name, double cost, int quantity, const RepairOrder& repairOrder);
