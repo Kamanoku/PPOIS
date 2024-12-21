@@ -8,7 +8,7 @@ private:
     std::string name;
     int age;
     double salary;
-    Department department; // Ассоциация: Employee связан с Department
+    Department department; 
 
 public:
     Employee(int id, const std::string& name, int age, double salary, const Department& dept);
