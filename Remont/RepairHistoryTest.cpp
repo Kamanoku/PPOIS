@@ -4,7 +4,7 @@
 #include <gtest/gtest.h>
 #include <sstream>
 
-// Тест конструктора
+
 TEST(RepairHistoryTest, ConstructorTest) {
     RepairHistory repairHistory(101, "Engine Repair", "2024-12-10", "John Doe");
 
@@ -14,7 +14,6 @@ TEST(RepairHistoryTest, ConstructorTest) {
     EXPECT_EQ(repairHistory.getTechnician(), "John Doe");
 }
 
-// Тест геттеров
 TEST(RepairHistoryTest, GettersTest) {
     RepairHistory repairHistory(102, "Brake Replacement", "2024-11-15", "Jane Smith");
 
