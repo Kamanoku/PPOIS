@@ -8,7 +8,7 @@ private:
     std::string name;
     double price;
     int stock;
-    RepairOrder repairOrder; // Ассоциация: запасная часть связана с заказом на ремонт
+    RepairOrder repairOrder; 
 
 public:
     SparePart(int id, const std::string& name, double price, int stock, const RepairOrder& repairOrder);
