@@ -4,7 +4,7 @@
 #include <gtest/gtest.h>
 #include <sstream>
 
-// Тест конструктора
+
 TEST(TechnicianTest, ConstructorTest) {
     RepairOrder repairOrder(1, "Engine Repair", 300.0, Client(1, "John Doe", "123-456-7890", Employee(1, "Jane Smith", 30, 4000.0, Department(1, "Maintenance"))), Employee(1, "Jane Smith", 30, 4000.0, Department(1, "Maintenance")));
 
@@ -17,7 +17,6 @@ TEST(TechnicianTest, ConstructorTest) {
     EXPECT_EQ(technician.getCurrentOrder().getId(), 1);
 }
 
-// Тест геттеров
 TEST(TechnicianTest, GettersTest) {
     RepairOrder repairOrder(2, "Brake Replacement", 150.0, Client(2, "Jane Smith", "987-654-3210", Employee(2, "Bob White", 35, 5000.0, Department(2, "Service"))), Employee(2, "Bob White", 35, 5000.0, Department(2, "Service")));
 
@@ -30,13 +29,13 @@ TEST(TechnicianTest, GettersTest) {
     EXPECT_EQ(technician.getCurrentOrder().getId(), 2);
 }
 
-// Тест сеттеров
+
 TEST(TechnicianTest, SettersTest) {
     RepairOrder repairOrder(3, "Tire Change", 100.0, Client(3, "Sam Green", "555-123-4567", Employee(3, "Charlie Brown", 40, 6000.0, Department(3, "Repair"))), Employee(3, "Charlie Brown", 40, 6000.0, Department(3, "Repair")));
 
     Technician technician(3, "Charlie Brown", 7, "Tire Specialist", repairOrder);
 
-    // Обновление данных
+   
     technician.setName("David Lee");
     technician.setExperienceYears(12);
     technician.setSpecialization("Wheel Alignment Specialist");
@@ -48,7 +47,7 @@ TEST(TechnicianTest, SettersTest) {
     EXPECT_EQ(technician.getCurrentOrder().getId(), 4);
 }
 
-// Тест метода вывода
+
 TEST(TechnicianTest, PrintDetailsTest) {
     RepairOrder repairOrder(5, "Window Tinting", 250.0, Client(5, "Mike Black", "444-789-1230", Employee(5, "Eva White", 28, 4800.0, Department(5, "Installation"))), Employee(5, "Eva White", 28, 4800.0, Department(5, "Installation")));
 
@@ -58,7 +57,7 @@ TEST(TechnicianTest, PrintDetailsTest) {
     std::streambuf* oldCoutBuffer = std::cout.rdbuf();
     std::cout.rdbuf(output.rdbuf());
 
-    technician.printDetails(); // Печать информации о технике
+    technician.printDetails();
 
     std::cout.rdbuf(oldCoutBuffer);
 
