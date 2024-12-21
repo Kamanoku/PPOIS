@@ -7,7 +7,6 @@
 #include <gtest/gtest.h>
 #include <sstream>
 
-// Тест конструктора
 TEST(RepairOrderTest, ConstructorTest) {
     Department dept(1, "Mechanics");
     Employee technician(1, "John Mechanic", 35, 40000.0, dept);
@@ -21,7 +20,7 @@ TEST(RepairOrderTest, ConstructorTest) {
     EXPECT_EQ(order.getTechnician().getName(), "John Mechanic");
 }
 
-// Тест геттеров
+
 TEST(RepairOrderTest, GettersTest) {
     Department dept(2, "Electronics");
     Employee technician(2, "Jane Electrician", 30, 45000.0, dept);
@@ -35,18 +34,18 @@ TEST(RepairOrderTest, GettersTest) {
     EXPECT_EQ(order.getTechnician().getName(), "Jane Electrician");
 }
 
-// Тест сеттеров
+
 TEST(RepairOrderTest, SettersTest) {
     Department dept(3, "IT");
     Employee initialTechnician(3, "Initial Tech", 28, 35000.0, dept);
     Client client(102, "Charlie", "555555555", initialTechnician);
     RepairOrder order(202, "Initial repair", 1200.0, client, initialTechnician);
 
-    // Обновление описания и стоимости
+    
     order.setDescription("Updated repair");
     order.setCost(1400.0);
 
-    // Обновление клиента и техника
+    
     Department newDept(4, "Welding");
     Employee newTechnician(4, "Updated Tech", 40, 50000.0, newDept);
     Client newClient(103, "Updated Charlie", "444444444", newTechnician);
@@ -59,7 +58,7 @@ TEST(RepairOrderTest, SettersTest) {
     EXPECT_EQ(order.getTechnician().getName(), "Updated Tech");
 }
 
-// Тест метода printDetails
+
 TEST(RepairOrderTest, PrintDetailsTest) {
     Department dept(5, "Bodywork");
     Employee technician(5, "Print Technician", 45, 55000.0, dept);
