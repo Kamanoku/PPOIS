@@ -8,7 +8,7 @@ private:
     std::string name;
     std::string type;
     double cost;
-    RepairOrder repairOrder; // Ассоциация: оборудование связано с заказом на ремонт
+    RepairOrder repairOrder; 
 
 public:
     Equipment(int id, const std::string& name, const std::string& type, double cost, const RepairOrder& repairOrder);
