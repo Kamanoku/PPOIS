@@ -8,7 +8,7 @@ private:
     std::string name;
     int experienceYears;
     std::string specialization;
-    RepairOrder currentOrder; // Ассоциация: техник связан с текущим заказом
+    RepairOrder currentOrder; 
 
 public:
     Technician(int id, const std::string& name, int experienceYears, const std::string& specialization, const RepairOrder& currentOrder);
