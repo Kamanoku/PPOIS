@@ -3,7 +3,6 @@
 #include "../REMONT/Warranty.cpp"
 #include <gtest/gtest.h>
 
-// Тест конструктора
 TEST(WarrantyTest, ConstructorTest) {
     Warranty warranty(101, "Standard Repair", 12, "Free repairs for 1 year");
 
@@ -13,7 +12,7 @@ TEST(WarrantyTest, ConstructorTest) {
     EXPECT_EQ(warranty.getTerms(), "Free repairs for 1 year");
 }
 
-// Тест геттеров
+
 TEST(WarrantyTest, GettersTest) {
     Warranty warranty(102, "Extended Warranty", 24, "Free repairs for 2 years");
 
