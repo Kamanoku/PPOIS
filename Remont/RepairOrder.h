@@ -8,8 +8,8 @@ private:
     int id;
     std::string description;
     double cost;
-    Client client;         // Ассоциация: заказ связан с клиентом
-    Employee technician;   // Ассоциация: заказ связан с исполнителем
+    Client client;         
+    Employee technician;   
 
 public:
     RepairOrder(int id, const std::string& description, double cost, const Client& client, const Employee& technician);
