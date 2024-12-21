@@ -8,7 +8,7 @@
 #include <gtest/gtest.h>
 #include <sstream>
 
-// Тест конструктора
+
 TEST(InvoiceTest, ConstructorTest) {
     Department dept(1, "Mechanics");
     Employee employee(1, "John Doe", 35, 50000.0, dept);
@@ -23,7 +23,6 @@ TEST(InvoiceTest, ConstructorTest) {
     EXPECT_EQ(invoice.getRepairOrder().getId(), 201);
 }
 
-// Тест геттеров
 TEST(InvoiceTest, GettersTest) {
     Department dept(2, "Electronics");
     Employee employee(2, "Jane Smith", 30, 45000.0, dept);
@@ -38,7 +37,7 @@ TEST(InvoiceTest, GettersTest) {
     EXPECT_EQ(invoice.getRepairOrder().getId(), 202);
 }
 
-// Тест сеттеров
+
 TEST(InvoiceTest, SettersTest) {
     Department dept(3, "Welding");
     Employee employee(3, "Mark Technician", 40, 55000.0, dept);
@@ -46,7 +45,7 @@ TEST(InvoiceTest, SettersTest) {
     RepairOrder repairOrder(203, "Engine repair", 300.0, client, employee);
     Invoice invoice(303, 350.0, "2024-12-22", client, repairOrder);
 
-    // Обновление данных
+   
     invoice.setTotalAmount(400.0);
     invoice.setIssueDate("2024-12-25");
 
@@ -64,7 +63,7 @@ TEST(InvoiceTest, SettersTest) {
     EXPECT_EQ(invoice.getRepairOrder().getId(), 204);
 }
 
-// Тест метода printDetails
+
 TEST(InvoiceTest, PrintDetailsTest) {
     Department dept(5, "Bodywork");
     Employee employee(5, "Tom Bodyworker", 28, 46000.0, dept);
