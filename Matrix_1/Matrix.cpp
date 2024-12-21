@@ -4,12 +4,12 @@
 
 Matrix::Matrix() : row(0), column(0), value(nullptr) {}
 Matrix::Matrix(int rows, int cols) : row(rows), column(cols) {
-	value = new double[row * column](); // Инициализация нулями
+	value = new double[row * column](); 
 }
 Matrix::Matrix(const Matrix& other) : row(other.row), column(other.column) {
-	value = new double[row * column]; // Предполагается, что `value` – это указатель на массив
+	value = new double[row * column]; 
 	for (int i = 0; i < row * column; ++i) {
-		value[i] = other.value[i]; // Копирование значений
+		value[i] = other.value[i]; 
 	}
 }
 
@@ -39,7 +39,7 @@ void Matrix::file(const std::string& filename) {
 		}
 
 		int n, column;
-		// Чтение размеров матрицы
+		
 		if (!(reading >> n >> column)) {
 			std::cout << "Ошибка чтения размеров матрицы из файла." << std::endl;
 			return;
@@ -47,22 +47,22 @@ void Matrix::file(const std::string& filename) {
 
 		std::cout << "Размеры матрицы из файла: " << n << " строк, " << column << " столбцов." << std::endl;
 
-		// Проверка корректности размеров
+	
 		if (n <= 0 || column <= 0) {
 			std::cout << "Некорректные размеры матрицы в файле." << std::endl;
 			return;
 		}
 
-		// Освобождение предыдущей памяти
+		
 		delete[] value;
 		value = nullptr;
 
-		// Инициализация матрицы
+		
 		row = n;
 		this->column = column;
 		value = new double[row * column];
 
-		// Чтение элементов матрицы
+		
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < column; j++) {
 				if (!(reading >> value[i * column + j])) {
@@ -130,15 +130,15 @@ bool Matrix::ChangeStolbec(int newCols) {
 
 	double* newValue = new double[row * newCols];
 
-	// Определяем минимальное количество столбцов для копирования
+	
 	int minCols = (newCols < column) ? newCols : column;
 
-	// Копируем старые значения в новые, если они существуют
+	
 	for (int i = 0; i < row; ++i) {
 		for (int j = 0; j < minCols; ++j) {
 			newValue[i * newCols + j] = value[i * column + j];
 		}
-		// Заполнение оставшихся столбцов нулями, если нужно
+		
 		for (int j = minCols; j < newCols; ++j) {
 			newValue[i * newCols + j] = 0.0;
 		}
@@ -265,7 +265,7 @@ Matrix Matrix::PodMatrix() const
 
 void Matrix::initialize(double value) {
 	for (int i = 0; i < row * column; ++i) {
-		this->value[i] = value; // Инициализация значениями
+		this->value[i] = value; 
 	}
 }
 
@@ -274,10 +274,10 @@ void Matrix::Show() const {
 		for (int j = 0; j < column; ++j) {
 			std::cout << std::fixed << std::setprecision(1) << value[i * column + j];
 			if (j < column - 1) {
-				std::cout << " "; // Пробел между элементами
+				std::cout << " "; 
 			}
 		}
-		std::cout << "\n"; // Переход на новую строку после каждой строки матрицы
+		std::cout << "\n"; 
 	}
 }
 
@@ -289,7 +289,7 @@ ostream& operator<<(ostream& os, const Matrix& matrix) {
 				os << " "; // Пробел между элементами
 			}
 		}
-		os << "\n"; // Переход на новую строку после каждой строки матрицы
+		os << "\n"; 
 	}
 	return os;
 }
@@ -306,28 +306,28 @@ istream& operator >> (istream& is, Matrix& Mymatrix) {
 
 Matrix& Matrix::operator++() {
 	for (int i = 0; i < row * column; ++i) {
-		value[i] += 1; // Увеличиваем каждый элемент на 1
+		value[i] += 1; 
 	}
-	return *this; // Возвращаем ссылку на текущий объект
+	return *this; 
 }
 
 Matrix Matrix::operator++(int) {
-	Matrix temp = *this; // Сохраняем текущее состояние
-	++(*this); // Вызов префиксного инкремента
-	return temp; // Возвращаем старое состояние
+	Matrix temp = *this; 
+	++(*this); 
+	return temp;
 }
 
 Matrix& Matrix::operator--() {
 	for (int i = 0; i < row * column; ++i) {
-		value[i] -= 1; // Уменьшаем каждый элемент на 1
+		value[i] -= 1; 
 	}
-	return *this; // Возвращаем ссылку на текущий объект
+	return *this; 
 }
 
 Matrix Matrix::operator--(int) {
-	Matrix temp = *this; // Сохраняем текущее состояние
-	--(*this); // Вызов префиксного декремента
-	return temp; // Возвращаем старое состояние
+	Matrix temp = *this; 
+	--(*this); 
+	return temp;
 }
 
 
@@ -368,6 +368,6 @@ bool Matrix::operator==(const Matrix& other) const {
 	return true;
 }
 bool Matrix::operator!=(const Matrix& other) const {
-	return !(*this == other); // Возвращаем результат оператора == инвертированным
+	return !(*this == other); 
 }
 #endif // MATRIX_H
