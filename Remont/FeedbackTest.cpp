@@ -7,7 +7,7 @@
 #include <gtest/gtest.h>
 #include <sstream>
 
-// Тест конструктора
+
 TEST(FeedbackTest, ConstructorTest) {
     Department dept(1, "HR");
     Employee emp(1, "John Doe", 30, 50000.0, dept);
@@ -20,7 +20,7 @@ TEST(FeedbackTest, ConstructorTest) {
     EXPECT_EQ(feedback.getClient().getName(), "Alice");
 }
 
-// Тест геттеров
+
 TEST(FeedbackTest, GettersTest) {
     Department dept(2, "Finance");
     Employee emp(2, "Jane Smith", 35, 60000.0, dept);
@@ -33,7 +33,7 @@ TEST(FeedbackTest, GettersTest) {
     EXPECT_EQ(feedback.getClient().getName(), "Bob");
 }
 
-// Тест сеттеров
+
 TEST(FeedbackTest, SettersTest) {
     Department dept(3, "IT");
     Employee emp(3, "Initial Employee", 25, 40000.0, dept);
@@ -53,7 +53,7 @@ TEST(FeedbackTest, SettersTest) {
     EXPECT_EQ(feedback.getClient().getName(), "Updated Charlie");
 }
 
-// Тест метода printDetails
+
 TEST(FeedbackTest, PrintDetailsTest) {
     Department dept(5, "Support");
     Employee emp(5, "Print Employee", 28, 45000.0, dept);
